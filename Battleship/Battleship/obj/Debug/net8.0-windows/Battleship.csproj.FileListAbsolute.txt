@@ -1,0 +1,14 @@
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\bin\Debug\net8.0-windows\Battleship.exe
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\bin\Debug\net8.0-windows\Battleship.deps.json
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\bin\Debug\net8.0-windows\Battleship.runtimeconfig.json
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\bin\Debug\net8.0-windows\Battleship.dll
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\bin\Debug\net8.0-windows\Battleship.pdb
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.AssemblyInfoInputs.cache
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.AssemblyInfo.cs
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.csproj.CoreCompileInputs.cache
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.dll
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\refint\Battleship.dll
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.pdb
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.genruntimeconfig.cache
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\ref\Battleship.dll

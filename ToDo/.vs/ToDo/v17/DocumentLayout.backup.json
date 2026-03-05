@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6D5B30-4CB7-4F45-82DD-EB79BA6C54B8}|ToDo\\ToDo.csproj|C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\todo\\models\\todoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E6D5B30-4CB7-4F45-82DD-EB79BA6C54B8}|ToDo\\ToDo.csproj|solutionrelative:todo\\models\\todoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6D5B30-4CB7-4F45-82DD-EB79BA6C54B8}|ToDo\\ToDo.csproj|c:\\users\\novoz\\desktop\\\u0443\u0447\u0435\u0431\u0430\\\u043E\u043E\u043F\\todo\\todo\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9E6D5B30-4CB7-4F45-82DD-EB79BA6C54B8}|ToDo\\ToDo.csproj|solutionrelative:todo\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6D5B30-4CB7-4F45-82DD-EB79BA6C54B8}|ToDo\\ToDo.csproj|C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\todo\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E6D5B30-4CB7-4F45-82DD-EB79BA6C54B8}|ToDo\\ToDo.csproj|solutionrelative:todo\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6D5B30-4CB7-4F45-82DD-EB79BA6C54B8}|ToDo\\ToDo.csproj|C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\todo\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{9E6D5B30-4CB7-4F45-82DD-EB79BA6C54B8}|ToDo\\ToDo.csproj|solutionrelative:todo\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\ToDo\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ToDo\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\ToDo\\MainWindow.xaml",
+              "RelativeToolTip": "ToDo\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-12T11:37:33.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ToDoom.cs",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\ToDo\\Models\\ToDoom.cs",
+              "RelativeDocumentMoniker": "ToDo\\Models\\ToDoom.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\ToDo\\Models\\ToDoom.cs",
+              "RelativeToolTip": "ToDo\\Models\\ToDoom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T11:53:59.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\ToDo\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ToDo\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\ToDo\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ToDo\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwDUAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T12:03:52.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\ToDo\\Services\\FileService.cs",
+              "RelativeDocumentMoniker": "ToDo\\Services\\FileService.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\\u041E\u041E\u041F\\ToDo\\ToDo\\Services\\FileService.cs",
+              "RelativeToolTip": "ToDo\\Services\\FileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T10:02:40.463Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
