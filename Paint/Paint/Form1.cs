@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Paint
 {
@@ -180,13 +181,32 @@ namespace Paint
         }
         private abstract class Shape
         {
-            public Pen Pen { get; set; }
+            public SerializablePen Pen { get; set; }
             public Color FillColor { get; set; }
             public bool Filled { get; set; }
 
             public abstract void Draw(Graphics g);
             public abstract bool Contains(Point p);
             public abstract Rectangle GetBounds();
+        }
+
+        private class SerializablePen
+        {
+            public Color Color { get; set; }
+            public float Width { get; set; }
+
+            public Pen ToPen()
+            {
+                var pen = new Pen(Color, Width);
+                pen.StartCap = LineCap.Round;
+                pen.EndCap = LineCap.Round;
+                return pen;
+            }
+
+            public static SerializablePen FromPen(Pen pen)
+            {
+                return new SerializablePen { Color = pen.Color, Width = pen.Width };
+            }
         }
 
         private class LineShape : Shape
@@ -196,7 +216,7 @@ namespace Paint
             public override void Draw(Graphics g)
             {
                 if (Points.Count > 1)
-                    g.DrawLines(Pen, Points.ToArray());
+                    g.DrawLines(Pen.ToPen(), Points.ToArray());
             }
 
             public override bool Contains(Point p)
@@ -226,7 +246,6 @@ namespace Paint
             }
         }
 
-
         private class RectShape : Shape
         {
             public Rectangle Rect;
@@ -236,7 +255,7 @@ namespace Paint
                 if (Filled)
                     g.FillRectangle(new SolidBrush(FillColor), Rect);
 
-                g.DrawRectangle(Pen, Rect);
+                g.DrawRectangle(Pen.ToPen(), Rect);
             }
 
             public override bool Contains(Point p)
@@ -256,7 +275,7 @@ namespace Paint
                 if (Filled)
                     g.FillEllipse(new SolidBrush(FillColor), Rect);
 
-                g.DrawEllipse(Pen, Rect);
+                g.DrawEllipse(Pen.ToPen(), Rect);
             }
 
             public override bool Contains(Point p)
@@ -280,7 +299,7 @@ namespace Paint
                 if (Filled)
                     g.FillPolygon(new SolidBrush(FillColor), Points);
 
-                g.DrawPolygon(Pen, Points);
+                g.DrawPolygon(Pen.ToPen(), Points);
             }
 
             public override bool Contains(Point p)
@@ -365,7 +384,7 @@ namespace Paint
 
                 if (!drawSquare && !drawEllipse && !drawHexagon)
                 {
-                    currentLine = new LineShape() { Pen = (Pen)pen.Clone() };
+                    currentLine = new LineShape() { Pen = SerializablePen.FromPen(pen) };
                     currentLine.Points.Add(e.Location);
                 }
             }
@@ -391,7 +410,7 @@ namespace Paint
                 shapes.Add(new RectShape()
                 {
                     Rect = GetRectangle(startPoint, e.Location),
-                    Pen = (Pen)pen.Clone(),
+                    Pen = SerializablePen.FromPen(pen),
                     Filled = fillMode,
                     FillColor = pen.Color
                 });
@@ -399,7 +418,7 @@ namespace Paint
                 shapes.Add(new EllipseShape()
                 {
                     Rect = GetRectangle(startPoint, e.Location),
-                    Pen = (Pen)pen.Clone(),
+                    Pen = SerializablePen.FromPen(pen),
                     Filled = fillMode,
                     FillColor = pen.Color
                 });
@@ -407,7 +426,7 @@ namespace Paint
                 shapes.Add(new HexShape()
                 {
                     Points = GetHexagonPoints(startPoint, e.Location),
-                    Pen = (Pen)pen.Clone(),
+                    Pen = SerializablePen.FromPen(pen),
                     Filled = fillMode,
                     FillColor = pen.Color
                 });
@@ -514,9 +533,175 @@ namespace Paint
 
         private void button1_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Filter = "JPG(*.JPG)|*.jpg";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK && pictureBox1.Image != null)
-                pictureBox1.Image.Save(saveFileDialog1.FileName);
+            saveFileDialog1.Filter = "Paint Project (*.pnt)|*.pnt|JPG Image (*.jpg)|*.jpg";
+            saveFileDialog1.DefaultExt = "pnt";
+            
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string ext = Path.GetExtension(saveFileDialog1.FileName).ToLower();
+                
+                if (ext == ".pnt")
+                {
+                    SaveProject(saveFileDialog1.FileName);
+                }
+                else if (ext == ".jpg" && pictureBox1.Image != null)
+                {
+                    pictureBox1.Image.Save(saveFileDialog1.FileName);
+                }
+            }
+        }
+
+        private void SaveProject(string filename)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filename))
+                {
+                    writer.WriteLine(shapes.Count);
+                    
+                    foreach (var shape in shapes)
+                    {
+                        writer.WriteLine(shape.Pen.Color.ToArgb());
+                        writer.WriteLine(shape.Pen.Width);
+                        writer.WriteLine(shape.FillColor.ToArgb());
+                        writer.WriteLine(shape.Filled);
+
+                        if (shape is LineShape ln)
+                        {
+                            writer.WriteLine("Line");
+                            writer.WriteLine(ln.Points.Count);
+                            foreach (var p in ln.Points)
+                            {
+                                writer.WriteLine($"{p.X},{p.Y}");
+                            }
+                        }
+                        else if (shape is RectShape rs)
+                        {
+                            writer.WriteLine("Rect");
+                            writer.WriteLine($"{rs.Rect.X},{rs.Rect.Y},{rs.Rect.Width},{rs.Rect.Height}");
+                        }
+                        else if (shape is EllipseShape es)
+                        {
+                            writer.WriteLine("Ellipse");
+                            writer.WriteLine($"{es.Rect.X},{es.Rect.Y},{es.Rect.Width},{es.Rect.Height}");
+                        }
+                        else if (shape is HexShape hs)
+                        {
+                            writer.WriteLine("Hex");
+                            writer.WriteLine(hs.Points.Length);
+                            foreach (var p in hs.Points)
+                            {
+                                writer.WriteLine($"{p.X},{p.Y}");
+                            }
+                        }
+                    }
+                }
+                MessageBox.Show("Файл сохранен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка сохранения: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadProject(string filename)
+        {
+            try
+            {
+                shapes.Clear();
+                
+                using (StreamReader reader = new StreamReader(filename))
+                {
+                    int count = int.Parse(reader.ReadLine());
+                    
+                    for (int i = 0; i < count; i++)
+                    {
+                        var pen = new SerializablePen
+                        {
+                            Color = Color.FromArgb(int.Parse(reader.ReadLine())),
+                            Width = float.Parse(reader.ReadLine())
+                        };
+                        
+                        var fillColor = Color.FromArgb(int.Parse(reader.ReadLine()));
+                        bool filled = bool.Parse(reader.ReadLine());
+                        string type = reader.ReadLine();
+
+                        Shape shape = null;
+
+                        if (type == "Line")
+                        {
+                            int pointCount = int.Parse(reader.ReadLine());
+                            var points = new List<Point>();
+                            for (int j = 0; j < pointCount; j++)
+                            {
+                                var coords = reader.ReadLine().Split(',');
+                                points.Add(new Point(int.Parse(coords[0]), int.Parse(coords[1])));
+                            }
+                            shape = new LineShape { Points = points };
+                        }
+                        else if (type == "Rect")
+                        {
+                            var coords = reader.ReadLine().Split(',');
+                            shape = new RectShape
+                            {
+                                Rect = new Rectangle(
+                                    int.Parse(coords[0]),
+                                    int.Parse(coords[1]),
+                                    int.Parse(coords[2]),
+                                    int.Parse(coords[3])
+                                )
+                            };
+                        }
+                        else if (type == "Ellipse")
+                        {
+                            var coords = reader.ReadLine().Split(',');
+                            shape = new EllipseShape
+                            {
+                                Rect = new Rectangle(
+                                    int.Parse(coords[0]),
+                                    int.Parse(coords[1]),
+                                    int.Parse(coords[2]),
+                                    int.Parse(coords[3])
+                                )
+                            };
+                        }
+                        else if (type == "Hex")
+                        {
+                            int pointCount = int.Parse(reader.ReadLine());
+                            var points = new Point[pointCount];
+                            for (int j = 0; j < pointCount; j++)
+                            {
+                                var coords = reader.ReadLine().Split(',');
+                                points[j] = new Point(int.Parse(coords[0]), int.Parse(coords[1]));
+                            }
+                            shape = new HexShape { Points = points };
+                        }
+
+                        if (shape != null)
+                        {
+                            shape.Pen = pen;
+                            shape.FillColor = fillColor;
+                            shape.Filled = filled;
+                            shapes.Add(shape);
+                        }
+                    }
+                }
+                
+                graphics.Clear(pictureBox1.BackColor);
+                selectedShape = null;
+                pictureBox1.Invalidate();
+                
+                MessageBox.Show("Файл загружен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private class ProjectData
+        {
+            public List<Shape> Shapes { get; set; }
         }
         private void button15_Click(object sender, EventArgs e)
         {
@@ -681,7 +866,7 @@ namespace Paint
                 case LineShape ln:
                     return new LineShape()
                     {
-                        Pen = (Pen)ln.Pen.Clone(),
+                        Pen = new SerializablePen { Color = ln.Pen.Color, Width = ln.Pen.Width },
                         Points = ln.Points.Select(p => new Point(p.X, p.Y)).ToList(),
                         FillColor = ln.FillColor,
                         Filled = ln.Filled
@@ -690,7 +875,7 @@ namespace Paint
                 case RectShape rs:
                     return new RectShape()
                     {
-                        Pen = (Pen)rs.Pen.Clone(),
+                        Pen = new SerializablePen { Color = rs.Pen.Color, Width = rs.Pen.Width },
                         Rect = rs.Rect,
                         FillColor = rs.FillColor,
                         Filled = rs.Filled
@@ -699,7 +884,7 @@ namespace Paint
                 case EllipseShape es:
                     return new EllipseShape()
                     {
-                        Pen = (Pen)es.Pen.Clone(),
+                        Pen = new SerializablePen { Color = es.Pen.Color, Width = es.Pen.Width },
                         Rect = es.Rect,
                         FillColor = es.FillColor,
                         Filled = es.Filled
@@ -708,7 +893,7 @@ namespace Paint
                 case HexShape hs:
                     return new HexShape()
                     {
-                        Pen = (Pen)hs.Pen.Clone(),
+                        Pen = new SerializablePen { Color = hs.Pen.Color, Width = hs.Pen.Width },
                         Points = hs.Points.Select(p => new Point(p.X, p.Y)).ToArray(),
                         FillColor = hs.FillColor,
                         Filled = hs.Filled
@@ -840,6 +1025,15 @@ namespace Paint
         {
             if (selectedShape != null)
                 changeOutlineMode = true;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Paint Project (*.pnt)|*.pnt";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                LoadProject(openFileDialog1.FileName);
+            }
         }
         private class CanvasState
         {
