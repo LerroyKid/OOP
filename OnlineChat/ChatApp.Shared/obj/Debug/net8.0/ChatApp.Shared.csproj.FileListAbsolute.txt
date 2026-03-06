@@ -1,0 +1,23 @@
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.AssemblyInfoInputs.cache
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.AssemblyInfo.cs
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\bin\Debug\net8.0\ChatApp.Shared.deps.json
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\bin\Debug\net8.0\ChatApp.Shared.dll
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\bin\Debug\net8.0\ChatApp.Shared.pdb
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.dll
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\refint\ChatApp.Shared.dll
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.pdb
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ref\ChatApp.Shared.dll
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\bin\Debug\net8.0\ChatApp.Shared.deps.json
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\bin\Debug\net8.0\ChatApp.Shared.dll
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\bin\Debug\net8.0\ChatApp.Shared.pdb
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.AssemblyInfoInputs.cache
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.AssemblyInfo.cs
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.dll
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\refint\ChatApp.Shared.dll
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.pdb
+C:\Users\novoz\Desktop\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ref\ChatApp.Shared.dll
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\OnlineChat\ChatApp.Shared\obj\Debug\net8.0\ChatApp.Shared.sourcelink.json

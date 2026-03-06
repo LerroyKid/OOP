@@ -1,0 +1,106 @@
+<Window x:Class="ChatApp.Client.Views.ProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Профиль пользователя" Height="600" Width="450"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" Background="#007ACC" Padding="15">
+            <TextBlock Text="Мой профиль" FontSize="20" FontWeight="Bold" 
+                       Foreground="White" HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Прокручиваемое содержимое -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="20">
+            <StackPanel>
+                <!-- Аватар -->
+                <StackPanel Margin="0,0,0,20">
+                    <TextBlock Text="Аватар:" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Border Width="150" Height="150" BorderBrush="#007ACC" BorderThickness="3" 
+                            CornerRadius="75" HorizontalAlignment="Center" ClipToBounds="True">
+                        <Border.Clip>
+                            <EllipseGeometry Center="75,75" RadiusX="72" RadiusY="72"/>
+                        </Border.Clip>
+                        <Grid>
+                            <Image x:Name="AvatarImage" Stretch="UniformToFill" 
+                                   Width="150" Height="150"/>
+                            <TextBlock x:Name="AvatarPlaceholder" Text="👤" FontSize="80" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       Foreground="#999"/>
+                        </Grid>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+                        <Button Content="📁 Выбрать файл" Margin="0,0,10,0" Padding="10,5"
+                                Click="ChangeAvatarButton_Click"/>
+                        <Button Content="🗑️ Удалить" Padding="10,5"
+                                Click="RemoveAvatarButton_Click"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Имя пользователя -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="Имя пользователя:" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="UsernameTextBox" Padding="8" FontSize="14"/>
+                </StackPanel>
+
+                <!-- Email -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="Email:" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="EmailTextBox" Padding="8" FontSize="14"/>
+                    <TextBlock Text="Используется для входа в систему" FontSize="11" Foreground="#999" Margin="0,3,0,0"/>
+                </StackPanel>
+
+                <!-- Статус -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="Статус:" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="StatusComboBox" Padding="8" FontSize="14">
+                        <ComboBoxItem Content="🟢 Онлайн"/>
+                        <ComboBoxItem Content="🔴 Не беспокоить"/>
+                        <ComboBoxItem Content="⚫ Офлайн"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- Биография -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="О себе:" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <TextBox x:Name="BioTextBox" Padding="8" Height="100" FontSize="14"
+                             TextWrapping="Wrap" AcceptsReturn="True" 
+                             VerticalScrollBarVisibility="Auto"/>
+                    <TextBlock Text="Расскажите о себе (максимум 500 символов)" 
+                               FontSize="11" Foreground="#999" Margin="0,3,0,0"/>
+                </StackPanel>
+
+                <!-- Безопасность -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="Безопасность:" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Content="🔒 Сменить пароль" Click="ChangePasswordButton_Click" 
+                            Padding="10,8" HorizontalAlignment="Left"/>
+                </StackPanel>
+
+                <!-- Дополнительная информация -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="Информация:" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <TextBlock x:Name="UserIdText" Text="ID: " FontSize="12" Foreground="#666" Margin="0,0,0,3"/>
+                    <TextBlock x:Name="CreatedDateText" Text="Дата регистрации: " FontSize="12" Foreground="#666"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Кнопки внизу -->
+        <Border Grid.Row="2" Background="#F5F5F5" Padding="20,15">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="💾 Сохранить" Click="SaveButton_Click" 
+                        Padding="25,10" Margin="0,0,10,0" Background="#007ACC" 
+                        Foreground="White" FontWeight="Bold" FontSize="14"/>
+                <Button Content="✖ Отмена" Click="CancelButton_Click" 
+                        Padding="25,10" FontSize="14"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
