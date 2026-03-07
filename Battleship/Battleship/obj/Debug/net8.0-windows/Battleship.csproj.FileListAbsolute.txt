@@ -12,3 +12,6 @@ C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\De
 C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.pdb
 C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.genruntimeconfig.cache
 C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\ref\Battleship.dll
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.ConnectionForm.resources
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.csproj.GenerateResource.cache
+C:\Users\novoz\Desktop\Учеба\2 курс\ООП\Battleship\Battleship\obj\Debug\net8.0-windows\Battleship.sourcelink.json

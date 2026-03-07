@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Battleship
@@ -144,24 +145,33 @@ namespace Battleship
                     myButtons[i, j].Text = "";
                     myButtons[i, j].Paint -= DrawCellContent;
                     
-                    switch (myBoard.Grid[i, j])
+                    // Проверяем, является ли клетка частью потопленного корабля
+                    if (myBoard.SunkShipCells.Contains((i, j)))
                     {
-                        case CellState.Ship:
-                            myButtons[i, j].BackColor = Color.Gray;
-                            break;
-                        case CellState.Hit:
-                            myButtons[i, j].BackColor = Color.Red;
-                            myButtons[i, j].Paint += DrawCellContent;
-                            myButtons[i, j].Tag = "X";
-                            break;
-                        case CellState.Miss:
-                            myButtons[i, j].BackColor = Color.LightBlue;
-                            myButtons[i, j].Paint += DrawCellContent;
-                            myButtons[i, j].Tag = "●";
-                            break;
-                        case CellState.Empty:
-                            myButtons[i, j].BackColor = Color.LightBlue;
-                            break;
+                        myButtons[i, j].BackColor = Color.DarkBlue;
+                        myButtons[i, j].Tag = null;
+                    }
+                    else
+                    {
+                        switch (myBoard.Grid[i, j])
+                        {
+                            case CellState.Ship:
+                                myButtons[i, j].BackColor = Color.Gray;
+                                break;
+                            case CellState.Hit:
+                                myButtons[i, j].BackColor = Color.Red;
+                                myButtons[i, j].Paint += DrawCellContent;
+                                myButtons[i, j].Tag = "x";
+                                break;
+                            case CellState.Miss:
+                                myButtons[i, j].BackColor = Color.LightBlue;
+                                myButtons[i, j].Paint += DrawCellContent;
+                                myButtons[i, j].Tag = "●";
+                                break;
+                            case CellState.Empty:
+                                myButtons[i, j].BackColor = Color.LightBlue;
+                                break;
+                        }
                     }
                     myButtons[i, j].Invalidate();
                 }
@@ -178,23 +188,33 @@ namespace Battleship
                     enemyButtons[i, j].Text = "";
                     enemyButtons[i, j].Paint -= DrawCellContent;
                     
-                    switch (enemyBoard.Grid[i, j])
+                    // Проверяем, является ли клетка частью потопленного корабля
+                    if (enemyBoard.SunkShipCells.Contains((i, j)))
                     {
-                        case CellState.Hit:
-                            enemyButtons[i, j].BackColor = Color.Red;
-                            enemyButtons[i, j].Paint += DrawCellContent;
-                            enemyButtons[i, j].Tag = "X";
-                            enemyButtons[i, j].Enabled = false;
-                            break;
-                        case CellState.Miss:
-                            enemyButtons[i, j].BackColor = Color.LightBlue;
-                            enemyButtons[i, j].Paint += DrawCellContent;
-                            enemyButtons[i, j].Tag = "●";
-                            enemyButtons[i, j].Enabled = false;
-                            break;
-                        case CellState.Empty:
-                            enemyButtons[i, j].BackColor = Color.LightGray;
-                            break;
+                        enemyButtons[i, j].BackColor = Color.DarkBlue;
+                        enemyButtons[i, j].Tag = null;
+                        enemyButtons[i, j].Enabled = false;
+                    }
+                    else
+                    {
+                        switch (enemyBoard.Grid[i, j])
+                        {
+                            case CellState.Hit:
+                                enemyButtons[i, j].BackColor = Color.Red;
+                                enemyButtons[i, j].Paint += DrawCellContent;
+                                enemyButtons[i, j].Tag = "x";
+                                enemyButtons[i, j].Enabled = false;
+                                break;
+                            case CellState.Miss:
+                                enemyButtons[i, j].BackColor = Color.LightBlue;
+                                enemyButtons[i, j].Paint += DrawCellContent;
+                                enemyButtons[i, j].Tag = "●";
+                                enemyButtons[i, j].Enabled = false;
+                                break;
+                            case CellState.Empty:
+                                enemyButtons[i, j].BackColor = Color.LightGray;
+                                break;
+                        }
                     }
                     enemyButtons[i, j].Invalidate();
                 }
@@ -211,7 +231,7 @@ namespace Battleship
                 
                 using (var font = new Font("Arial", 18, FontStyle.Bold))
                 {
-                    var color = symbol == "X" ? Color.White : Color.DarkBlue;
+                    var color = symbol == "x" ? Color.White : Color.DarkBlue;
                     using (var brush = new SolidBrush(color))
                     {
                         var size = e.Graphics.MeasureString(symbol, font);
@@ -267,8 +287,24 @@ namespace Battleship
                     bool hit = myBoard.ProcessShot(x, y, out bool sunk);
                     UpdateMyBoard();
                     
-                    // Отправляем результат с координатами
-                    await network.SendMessage($"RESULT:{x},{y},{hit},{sunk}");
+                    if (sunk)
+                    {
+                        // Находим потопленный корабль и отправляем его координаты
+                        var sunkShip = myBoard.Ships.FirstOrDefault(s => s.IsSunk() && s.Coordinates.Contains((x, y)));
+                        if (sunkShip != null)
+                        {
+                            string coordsList = string.Join("|", sunkShip.Coordinates.Select(c => $"{c.x}-{c.y}"));
+                            await network.SendMessage($"RESULT:{x},{y},{hit},{sunk},{coordsList}");
+                        }
+                        else
+                        {
+                            await network.SendMessage($"RESULT:{x},{y},{hit},{sunk}");
+                        }
+                    }
+                    else
+                    {
+                        await network.SendMessage($"RESULT:{x},{y},{hit},{sunk}");
+                    }
                     
                     if (myBoard.AllShipsSunk())
                     {
@@ -298,9 +334,31 @@ namespace Battleship
                     if (wasHit)
                     {
                         enemyBoard.Grid[shotX, shotY] = CellState.Hit;
-                        enemyBoard.Ships.Add(new Ship(1));
+                        
                         if (wasSunk)
                         {
+                            // Получаем координаты потопленного корабля
+                            if (resultParts.Length > 4 && !string.IsNullOrEmpty(resultParts[4]))
+                            {
+                                string shipCoordsStr = resultParts[4];
+                                string[] shipCoords = shipCoordsStr.Split('|');
+                                
+                                foreach (var coordStr in shipCoords)
+                                {
+                                    if (!string.IsNullOrEmpty(coordStr))
+                                    {
+                                        var coord = coordStr.Split('-');
+                                        if (coord.Length == 2)
+                                        {
+                                            int cx = int.Parse(coord[0].Trim());
+                                            int cy = int.Parse(coord[1].Trim());
+                                            enemyBoard.SunkShipCells.Add((cx, cy));
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            enemyBoard.Ships.Add(new Ship(1));
                             lblStatus.Text = "Вы потопили корабль! Ваш ход!";
                         }
                         else

@@ -17,11 +17,13 @@ namespace Battleship
         public const int BoardSize = 10;
         public CellState[,] Grid { get; private set; }
         public List<Ship> Ships { get; private set; }
+        public HashSet<(int x, int y)> SunkShipCells { get; private set; }
 
         public GameBoard()
         {
             Grid = new CellState[BoardSize, BoardSize];
             Ships = new List<Ship>();
+            SunkShipCells = new HashSet<(int x, int y)>();
         }
 
         public bool PlaceShip(int x, int y, int size, bool horizontal)
@@ -86,6 +88,11 @@ namespace Battleship
                     if (ship.IsSunk())
                     {
                         shipSunk = true;
+                        // Добавляем все клетки потопленного корабля в список
+                        foreach (var coord in ship.Coordinates)
+                        {
+                            SunkShipCells.Add(coord);
+                        }
                     }
                 }
                 return true;

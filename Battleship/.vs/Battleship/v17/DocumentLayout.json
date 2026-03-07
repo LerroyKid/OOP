@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|c:\\users\\novoz\\desktop\\\u0443\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\battleship\\battleship\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\battleship\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|c:\\users\\novoz\\desktop\\\u0443\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\battleship\\battleship\\gameboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\gameboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|c:\\users\\novoz\\desktop\\\u0443\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\battleship\\battleship\\shipplacementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\shipplacementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\battleship\\shipplacementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\shipplacementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|c:\\users\\novoz\\desktop\\\u0443\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\battleship\\battleship\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|c:\\users\\novoz\\desktop\\\u0443\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\battleship\\battleship\\connectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\connectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\battleship\\connectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\connectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|c:\\users\\novoz\\desktop\\\u0443\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\battleship\\battleship\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|Battleship\\Battleship.csproj|solutionrelative:battleship\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,15 +51,109 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GameForm.cs",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\GameForm.cs",
+              "RelativeDocumentMoniker": "Battleship\\GameForm.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\GameForm.cs",
+              "RelativeToolTip": "Battleship\\GameForm.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAswKwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T02:13:16.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShipPlacementForm.cs",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\ShipPlacementForm.cs",
+              "RelativeDocumentMoniker": "Battleship\\ShipPlacementForm.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\ShipPlacementForm.cs",
+              "RelativeToolTip": "Battleship\\ShipPlacementForm.cs",
+              "ViewState": "AgIAAC0BAAAAAAAAAAAcwAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T02:05:26.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShipPlacementForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\ShipPlacementForm.cs",
+              "RelativeDocumentMoniker": "Battleship\\ShipPlacementForm.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\ShipPlacementForm.cs [Design]",
+              "RelativeToolTip": "Battleship\\ShipPlacementForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T02:05:09.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\GameForm.cs",
+              "RelativeDocumentMoniker": "Battleship\\GameForm.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\GameForm.cs [Design]",
+              "RelativeToolTip": "Battleship\\GameForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T02:02:07.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameBoard.cs",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\GameBoard.cs",
+              "RelativeDocumentMoniker": "Battleship\\GameBoard.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\GameBoard.cs",
+              "RelativeToolTip": "Battleship\\GameBoard.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T01:59:43.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NetworkManager.cs",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\NetworkManager.cs",
+              "RelativeDocumentMoniker": "Battleship\\NetworkManager.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\NetworkManager.cs",
+              "RelativeToolTip": "Battleship\\NetworkManager.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T01:58:27.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ConnectionForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\ConnectionForm.cs",
+              "RelativeDocumentMoniker": "Battleship\\ConnectionForm.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\ConnectionForm.cs [Design]",
+              "RelativeToolTip": "Battleship\\ConnectionForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T01:50:21.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConnectionForm.cs",
+              "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\ConnectionForm.cs",
+              "RelativeDocumentMoniker": "Battleship\\ConnectionForm.cs",
+              "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\ConnectionForm.cs",
+              "RelativeToolTip": "Battleship\\ConnectionForm.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T01:50:17.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\Program.cs",
               "RelativeDocumentMoniker": "Battleship\\Program.cs",
               "ToolTip": "C:\\Users\\novoz\\Desktop\\\u0423\u0447\u0435\u0431\u0430\\2 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\Battleship\\Battleship\\Program.cs",
               "RelativeToolTip": "Battleship\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T04:43:35.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T04:43:35.968Z"
             }
           ]
         }
